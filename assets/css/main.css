@@ -1,0 +1,21 @@
+.d-flex {
+    display: flex;
+}
+
+.charBox {
+    align-items: center;
+    display: flex;
+    border: 3px solid green;
+    flex-direction: column;
+    height: 150px;
+    margin: 5px;
+    width: 150px;
+}
+
+.enemyBox {
+    border: 3px solid black;
+}
+
+.defenderBox {
+    border: 3px solid red;
+}
