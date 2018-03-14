@@ -18,22 +18,25 @@ body {
 
 .charBox {
     align-items: center;
+    border-radius: 5px;
     display: flex;
     background-color: white;
     border: 3px solid orange;
     flex-direction: column;
-    height: 100px;
     margin: 0px 5px;
+}
+
+.charImg {
     width: 100px;
+    height: auto;
 }
 
 .attacker {
     display: flex;
-    height: 100px;
+    min-height: 100px;
     justify-content: center;
     margin: 0;
     width: 50%;
-    border: 1px solid yellow;
 }
 
 .attackerBox {
@@ -42,11 +45,10 @@ body {
 
 .defender {
     display: flex;
-    height: 100px;
+    min-height: 100px;
     justify-content: center;
     width: 50%;
     margin: 10px;
-    border: 1px solid yellow;
 }
 
 .defenderBox {
@@ -54,7 +56,7 @@ body {
 }
 
 .logo {
-    width: 400px;
+    width: 300px;
     height: auto;
 }
 

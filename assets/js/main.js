@@ -21,7 +21,7 @@ $( document ).ready(function() {
         "name" : "Luke",
         "health" : 120,
         "oHealth" : 120,
-        "multiplier": 20,
+        "multiplier": 15,
         "oMultiplier": 6,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
@@ -33,7 +33,7 @@ $( document ).ready(function() {
         "name" : "Darth Maul",
         "health" : 180,
         "oHealth" : 180,
-        "multiplier": 10,
+        "multiplier": 15,
         "oMultiplier": 6,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
@@ -43,9 +43,9 @@ $( document ).ready(function() {
     let r2d2 = {
         "div" : r2d2Div,
         "name" : "R2D2",
-        "health" : 100,
-        "oHealth" : 100,
-        "multiplier": 5,
+        "health" : 130,
+        "oHealth" : 130,
+        "multiplier": 15,
         "oMultiplier": 6,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
@@ -57,7 +57,7 @@ $( document ).ready(function() {
         "name" : "Chewbacca",
         "health" : 150,
         "oHealth" : 150,
-        "multiplier": 6,
+        "multiplier": 15,
         "oMultiplier": 6,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)

@@ -23,39 +23,44 @@
         <div id='luke'  class="charBox">
             <div>Luke</div>
             <div><span id="lukeHealth">120</span></div>
+            <img class="charImg" src="./assets/images/Luke-Skywalker-icon.png">
         </div>
 
         <div id="r2d2" class="charBox">
             <div>R2D2</div>
             <div><span id="r2d2Health">100</span></div>
+            <img class="charImg" src="./assets/images/R2D2-icon.png">
         </div>
 
         <div id="chewbacca" class="charBox">
             <div>Chewbacca</div>
             <div><span id="chewbaccaHealth">150</span></div>
+            <img class="charImg" src="./assets/images/Chewbacca-icon.png">
         </div>
 
         <div id="darthmaul" class="charBox">
             <div>Darth Maul</div>
             <div><span id="darthmaulHealth">180</span></div>
+            <img class="charImg" src="./assets/images/Darth-Vader-icon.png">
         </div>
     </div>
 
     <!-- character to attack -->
     <h2>Choose character to attack.</h2>
-    <div class='attacker d-flex' id="attackCharacters">
 
+    <div class='attacker d-flex' id="attackCharacters">
     </div>
-    <div>
-    <button id="attackBtn">Attack</button>
-    </div>
+    
     <!-- Defender -->
     <h2>Defender</h2>
+    <div>
+        <button id="attackBtn">Attack</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+    
     <div class="defender" id="defender" >
 
     </div>
-
-    <button id="resetBtn">Reset</button>
 
     <div>
         <p id="textDisplay"></p>
