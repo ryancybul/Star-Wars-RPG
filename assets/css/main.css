@@ -1,3 +1,17 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    background-image: url('./../images/background.jpg');
+    display: flex;
+    justify-content: center;
+}
+
 .d-flex {
     display: flex;
 }
@@ -5,17 +19,52 @@
 .charBox {
     align-items: center;
     display: flex;
-    border: 3px solid black;
+    background-color: white;
+    border: 3px solid orange;
     flex-direction: column;
-    height: 150px;
-    margin: 5px;
-    width: 150px;
+    height: 100px;
+    margin: 0px 5px;
+    width: 100px;
+}
+
+.attacker {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin: 0;
+    width: 50%;
+    border: 1px solid yellow;
 }
 
 .attackerBox {
     border: 3px solid green;
 }
 
+.defender {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 50%;
+    margin: 10px;
+    border: 1px solid yellow;
+}
+
 .defenderBox {
     border: 3px solid red;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 75%
+}
+
+h2,p {
+    color: yellow;
 }

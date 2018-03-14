@@ -97,7 +97,6 @@ $( document ).ready(function() {
         }
     }
 
-    //Move characters on DOM
     function moveAttacker(attacker) {
         charAttacksDiv.append(attacker);
     }
@@ -110,7 +109,6 @@ $( document ).ready(function() {
         charStart.append(character);
     }
     
-
     function healthUpdate() {
         $('#lukeHealth').text(luke.health);
         $('#darthmaulHealth').text(darthMaul.health);
@@ -150,6 +148,7 @@ $( document ).ready(function() {
         resetGame();
     });
 
+    $('#resetBtn').hide();
 
     //Character clicked events
     $(lukeDiv).on('click', function() {

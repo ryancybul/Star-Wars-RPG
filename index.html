@@ -11,49 +11,57 @@
 </head>
 <body>
 
-<!-- character choose -->
-<h2>Your Character</h2>
-<div class='d-flex' id="charStart">
-    <div id='luke'  class="charBox">
-        <div>Luke</div>
-        <div><span id="lukeHealth">120</span></div>
-    </div>
-
-    <div id="r2d2" class="charBox">
-        <div>R2D2</div>
-        <div><span id="r2d2Health">100</span></div>
-    </div>
-
-    <div id="chewbacca" class="charBox">
-        <div>Chewbacca</div>
-        <div><span id="chewbaccaHealth">150</span></div>
-    </div>
-
-    <div id="darthmaul" class="charBox">
-        <div>Darth Maul</div>
-        <div><span id="darthmaulHealth">180</span></div>
-    </div>
-</div>
-
-<!-- character to attack -->
-<h2>Choose character to attack.</h2>
-<div class='d-flex' id="attackCharacters">
-
-</div>
-
-<!-- Defender -->
-<h2>Defender</h2>
-<div id="defender">
-
-</div>
-
-<button id="attackBtn">Attack</button>
-<button id="resetBtn">Reset</button>
+<div class="wrapper">
 
 <div>
-    <p id="textDisplay"></p>
+<img class='logo' src="./assets/images/Star_Wars_Yellow_Logo.svg">
 </div>
 
+<!-- character choose -->
+<h2>Your Character</h2>
+    <div class='d-flex' id="charStart">
+        <div id='luke'  class="charBox">
+            <div>Luke</div>
+            <div><span id="lukeHealth">120</span></div>
+        </div>
+
+        <div id="r2d2" class="charBox">
+            <div>R2D2</div>
+            <div><span id="r2d2Health">100</span></div>
+        </div>
+
+        <div id="chewbacca" class="charBox">
+            <div>Chewbacca</div>
+            <div><span id="chewbaccaHealth">150</span></div>
+        </div>
+
+        <div id="darthmaul" class="charBox">
+            <div>Darth Maul</div>
+            <div><span id="darthmaulHealth">180</span></div>
+        </div>
+    </div>
+
+    <!-- character to attack -->
+    <h2>Choose character to attack.</h2>
+    <div class='attacker d-flex' id="attackCharacters">
+
+    </div>
+    <div>
+    <button id="attackBtn">Attack</button>
+    </div>
+    <!-- Defender -->
+    <h2>Defender</h2>
+    <div class="defender" id="defender" >
+
+    </div>
+
+    <button id="resetBtn">Reset</button>
+
+    <div>
+        <p id="textDisplay"></p>
+    </div>
+
+</div>
 
 </body>
 </html>
