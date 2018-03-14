@@ -8,16 +8,20 @@ $( document ).ready(function() {
 
     let charAttacksDiv = $('#attackCharacters');
     let defenderDiv = $('#defender');
+    let charStart = $('#charStart');
 
     //Holds value of attacker and defender
     let charAttacker = null;
     let charDefender = null;
+
+    let killCounter = 0;
     
     let luke = {
+        "div" : lukeDiv,
         "name" : "Luke",
         "health" : 120,
         "oHealth" : 120,
-        "multiplier": 7,
+        "multiplier": 20,
         "oMultiplier": 6,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
@@ -25,6 +29,7 @@ $( document ).ready(function() {
     };
 
     let darthMaul = {
+        "div" : darthMaulDiv,
         "name" : "Darth Maul",
         "health" : 180,
         "oHealth" : 180,
@@ -36,6 +41,7 @@ $( document ).ready(function() {
     };
 
     let r2d2 = {
+        "div" : r2d2Div,
         "name" : "R2D2",
         "health" : 100,
         "oHealth" : 100,
@@ -47,6 +53,7 @@ $( document ).ready(function() {
     };
 
     let chewbacca = {
+        "div" : chewbaccaDiv,
         "name" : "Chewbacca",
         "health" : 150,
         "oHealth" : 150,
@@ -69,16 +76,24 @@ $( document ).ready(function() {
         jediOne.multiplier++;
         healthUpdate();
 
+        $('#textDisplay').html("<p>You attacked " + jediTwo.name + ' for ' + j1Power + " damage.</p>" + "<p>" + jediTwo.name + ' attacked you for ' + j2Power + " damage.</p>");
+
         // check health for both characters
         if (jediOne.health <= 0) {
             alert("You lose! " + jediOne.name + " is dead.");
-
-            resetGame(jediOne,jediTwo);
+            resetGame();
         }
-        if (jediTwo.health <= 0) {
-            alert("You win! " + jediTwo.name + " is dead.");
-            
-            resetGame(jediOne,jediTwo);
+        else if (jediTwo.health <= 0) {
+            $('#textDisplay').html("<p>You have defeated " + jediTwo.name + ". Choose a new opponent to battle.</p>");
+            (jediTwo.div).hide();
+            charDefender = false;
+            killCounter++;
+            console.log(killCounter);
+        }
+        if (killCounter === 3) {
+            $('#textDisplay').html("<p>You have defeated " + jediTwo.name + " and won the battle!  Click reset to play again.</p>");
+            $('#attackBtn').hide();
+            $('#resetBtn').show();
         }
     }
 
@@ -91,6 +106,11 @@ $( document ).ready(function() {
         defenderDiv.append(defender);
     }
 
+    function moveCharStart(character) {
+        charStart.append(character);
+    }
+    
+
     function healthUpdate() {
         $('#lukeHealth').text(luke.health);
         $('#darthmaulHealth').text(darthMaul.health);
@@ -98,15 +118,26 @@ $( document ).ready(function() {
         $('#chewbaccaHealth').text(chewbacca.health);
     }
 
-    function resetGame(jediOne,jediTwo) {
-        jediOne.health = jediOne.oHealth;
-        jediTwo.health = jediTwo.oHealth;
-        jediOne.multiplier = jediOne.oMultiplier;
+    function resetGame() {
+        luke.health = luke.oHealth;
+        darthMaul.health = darthMaul.oHealth;
+        r2d2.health = r2d2.oHealth;
+        chewbacca.health = chewbacca.oHealth;
 
         healthUpdate();
 
         charAttacker = null;
         charDefender = null;
+        killCounter = 0;
+
+        moveCharStart(lukeDiv.removeClass('attackerBox defenderBox').show());
+        moveCharStart(r2d2Div.removeClass('attackerBox defenderBox').show());
+        moveCharStart(chewbaccaDiv.removeClass('attackerBox defenderBox').show());
+        moveCharStart(darthMaulDiv.removeClass('attackerBox defenderBox').show());
+
+        $('#textDisplay').text('');
+        $('#attackBtn').show();
+        $('#resetBtn').hide();
     }
 
 //Events
@@ -115,13 +146,19 @@ $( document ).ready(function() {
         attack(charAttacker, charDefender);
     });
 
+    $('#resetBtn').on('click', function() {
+        resetGame();
+    });
+
+
     //Character clicked events
     $(lukeDiv).on('click', function() {
         if(!charAttacker){
-            moveAttacker(r2d2Div.addClass('enemyBox'));
-            moveAttacker(chewbaccaDiv.addClass('enemyBox'));
-            moveAttacker(darthMaulDiv.addClass('enemyBox'));
+            moveAttacker(r2d2Div);
+            moveAttacker(chewbaccaDiv);
+            moveAttacker(darthMaulDiv);
             charAttacker = luke;
+            lukeDiv.addClass('attackerBox');
         }
         else if (!charDefender) {
             moveDefender(lukeDiv.addClass('defenderBox'));
@@ -131,10 +168,11 @@ $( document ).ready(function() {
 
     $(r2d2Div).on('click', function() {
         if(!charAttacker){
-            moveAttacker(lukeDiv.addClass('enemyBox'));
-            moveAttacker(chewbaccaDiv.addClass('enemyBox'));
-            moveAttacker(darthMaulDiv.addClass('enemyBox'));
+            moveAttacker(lukeDiv);
+            moveAttacker(chewbaccaDiv);
+            moveAttacker(darthMaulDiv);
             charAttacker = r2d2;
+            r2d2Div.addClass('attackerBox');
         }
         else if (!charDefender) {
             moveDefender(r2d2Div.addClass('defenderBox'));
@@ -144,10 +182,11 @@ $( document ).ready(function() {
 
     $(chewbaccaDiv).on('click', function() {
         if(!charAttacker){
-            moveAttacker(lukeDiv.addClass('enemyBox'));
-            moveAttacker(r2d2Div.addClass('enemyBox'));
-            moveAttacker(darthMaulDiv.addClass('enemyBox'));
+            moveAttacker(lukeDiv);
+            moveAttacker(r2d2Div);
+            moveAttacker(darthMaulDiv);
             charAttacker = chewbacca;
+            chewbaccaDiv.addClass('attackerBox');
         }
         else if (!charDefender) {
             moveDefender(chewbaccaDiv.addClass('defenderBox'));
@@ -157,10 +196,11 @@ $( document ).ready(function() {
 
     $(darthMaulDiv).on('click', function() {
         if(!charAttacker){
-            moveAttacker(lukeDiv.addClass('enemyBox'));
-            moveAttacker(r2d2Div.addClass('enemyBox'));
-            moveAttacker(chewbaccaDiv.addClass('enemyBox'));
+            moveAttacker(lukeDiv);
+            moveAttacker(r2d2Div);
+            moveAttacker(chewbaccaDiv);
             charAttacker = darthMaul;
+            darthMaulDiv.addClass('attackerBox');
         }
         else if (!charDefender) {
             moveDefender(darthMaulDiv.addClass('defenderBox'));

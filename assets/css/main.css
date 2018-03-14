@@ -5,15 +5,15 @@
 .charBox {
     align-items: center;
     display: flex;
-    border: 3px solid green;
+    border: 3px solid black;
     flex-direction: column;
     height: 150px;
     margin: 5px;
     width: 150px;
 }
 
-.enemyBox {
-    border: 3px solid black;
+.attackerBox {
+    border: 3px solid green;
 }
 
 .defenderBox {
