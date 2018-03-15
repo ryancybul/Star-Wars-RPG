@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///Users/ryancybul/code/week-4-game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./Page Title_files/main.css">
+    <script src="./Page Title_files/jquery.min.js"></script>
+    <script src="./Page Title_files/main.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+<div>
+<img class="logo" src="./Page Title_files/Star_Wars_Yellow_Logo.svg">
+</div>
+
+
+<div class="wrapperChar">
+    <div class="text-align">
+        <h2>Your Character</h2>
+        <div class="chooseChar">
+            <div class="d-flex" id="charStart">
+                <div id="luke" class="charBox">
+                    <img class="charImg" src="./Page Title_files/Luke-Skywalker-icon.png">
+                    <div>Luke</div>
+                    <div><span id="lukeHealth">120</span></div>
+                </div>
+
+                <div id="r2d2" class="charBox">
+                    <img class="charImg" src="./Page Title_files/R2D2-icon.png">
+                    <div>R2D2</div>
+                    <div><span id="r2d2Health">100</span></div>
+                </div>
+
+                <div id="chewbacca" class="charBox">
+                    <img class="charImg" src="./Page Title_files/Chewbacca-icon.png">
+                    <div>Chewbacca</div>
+                    <div><span id="chewbaccaHealth">150</span></div>
+                </div>
+
+                <div id="darthmaul" class="charBox">
+                    <img class="charImg" src="./Page Title_files/Darth-Vader-icon.png">
+                    <div>Darth Maul</div>
+                    <div><span id="darthmaulHealth">180</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <h2>Choose character to attack.</h2>
+    <div class="chooseChar">
+        <!-- character to attack -->
+        <div class="attacker d-flex" id="attackCharacters"></div>
+    </div>
+    </div>
+</div>
+
+    
+    <!-- Defender -->
+    <h2>Defender</h2>
+    <div>
+        <button id="attackBtn">Attack</button>
+        <button id="resetBtn" style="display: none;">Reset</button>
+    </div>
+
+    <div class="defender" id="defender">
+    </div>
+
+    <p id="textDisplay"></p>
+
+</div>
+
+
+</body></html>

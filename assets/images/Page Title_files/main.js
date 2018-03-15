@@ -30,7 +30,7 @@ $( document ).ready(function() {
 
     let darthMaul = {
         "div" : darthMaulDiv,
-        "name" : "Darth Vader",
+        "name" : "Darth Maul",
         "health" : 180,
         "oHealth" : 180,
         "multiplier": 12,
@@ -78,10 +78,10 @@ $( document ).ready(function() {
 
         $('#textDisplay').html("<p>You attacked " + jediTwo.name + ' for ' + j1Power + " damage.</p>" + "<p>" + jediTwo.name + ' attacked you for ' + j2Power + " damage.</p>");
 
-        //If characters healths is less than zero
+        // check health for both characters
         if (jediOne.health <= 0) {
-            $('#textDisplay').html("<p>You lost the battle! " + jediOne.name + " is dead. Click the reset button to play again.<p>");
-            $('#resetBtn').show();
+            alert("You lose! " + jediOne.name + " is dead.");
+            resetGame();
         }
         else if (jediTwo.health <= 0) {
             $('#textDisplay').html("<p>You have defeated " + jediTwo.name + ". Choose a new opponent to battle.</p>");
@@ -90,17 +90,15 @@ $( document ).ready(function() {
             killCounter++;
             console.log(killCounter);
         }
-        //If player defeats all opponents
         if (killCounter === 3) {
-            $('#textDisplay').html("<p>You have defeated " + jediTwo.name + " and won the battle! Click reset to play again.</p>");
+            $('#textDisplay').html("<p>You have defeated " + jediTwo.name + " and won the battle!  Click reset to play again.</p>");
+            $('#attackBtn').hide();
             $('#resetBtn').show();
         }
     }
 
-    //Moves character to different areas
     function moveAttacker(attacker) {
         charAttacksDiv.append(attacker);
-        $('#yourChar').text("Your Character");
     }
 
     function moveDefender(defender) {
@@ -111,7 +109,6 @@ $( document ).ready(function() {
         charStart.append(character);
     }
     
-    //Called to update the health after each attack
     function healthUpdate() {
         $('#lukeHealth').text(luke.health);
         $('#darthmaulHealth').text(darthMaul.health);
@@ -120,21 +117,17 @@ $( document ).ready(function() {
     }
 
     function resetGame() {
-        //Resets the original health
         luke.health = luke.oHealth;
         darthMaul.health = darthMaul.oHealth;
         r2d2.health = r2d2.oHealth;
         chewbacca.health = chewbacca.oHealth;
 
-        //Print the updated health
         healthUpdate();
 
-        //Clears the attacker, defender, and killCounter. 
         charAttacker = null;
         charDefender = null;
         killCounter = 0;
 
-        //Move characters to starting position.
         moveCharStart(lukeDiv.removeClass('attackerBox defenderBox').show());
         moveCharStart(r2d2Div.removeClass('attackerBox defenderBox').show());
         moveCharStart(chewbaccaDiv.removeClass('attackerBox defenderBox').show());
@@ -143,7 +136,6 @@ $( document ).ready(function() {
         $('#textDisplay').text('');
         $('#attackBtn').show();
         $('#resetBtn').hide();
-        $('#yourChar').text("Choose Your Character");
     }
 
 //Events

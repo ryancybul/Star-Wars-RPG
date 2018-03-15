@@ -6,6 +6,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </head>
@@ -17,54 +18,61 @@
 <img class='logo' src="./assets/images/Star_Wars_Yellow_Logo.svg">
 </div>
 
-<!-- character choose -->
-<h2>Your Character</h2>
-    <div class='d-flex' id="charStart">
-        <div id='luke'  class="charBox">
-            <div>Luke</div>
-            <div><span id="lukeHealth">120</span></div>
-            <img class="charImg" src="./assets/images/Luke-Skywalker-icon.png">
-        </div>
 
-        <div id="r2d2" class="charBox">
-            <div>R2D2</div>
-            <div><span id="r2d2Health">100</span></div>
-            <img class="charImg" src="./assets/images/R2D2-icon.png">
-        </div>
+<div class="wrapperChar">
+    <div class="text-align">
+        <h2 id="yourChar">Choose Your Character</h2>
+        <div class="chooseChar">
 
-        <div id="chewbacca" class="charBox">
-            <div>Chewbacca</div>
-            <div><span id="chewbaccaHealth">150</span></div>
-            <img class="charImg" src="./assets/images/Chewbacca-icon.png">
-        </div>
+            <div class='d-flex' id="charStart">
+                <div id='luke'  class="charBox">
+                    <img class="charImg" src="./assets/images/Luke-Skywalker-icon.png">
+                    <div>Luke</div>
+                    <div><span id="lukeHealth">120</span></div>
+                </div>
 
-        <div id="darthmaul" class="charBox">
-            <div>Darth Maul</div>
-            <div><span id="darthmaulHealth">180</span></div>
-            <img class="charImg" src="./assets/images/Darth-Vader-icon.png">
+                <div id="r2d2" class="charBox">
+                    <img class="charImg" src="./assets/images/R2D2-icon.png">
+                    <div>R2D2</div>
+                    <div><span id="r2d2Health">100</span></div>
+                </div>
+
+                <div id="chewbacca" class="charBox">
+                    <img class="charImg" src="./assets/images/Chewbacca-icon.png">
+                    <div>Chewbacca</div>
+                    <div><span id="chewbaccaHealth">150</span></div>
+                </div>
+
+                <div id="darthmaul" class="charBox">
+                    <img class="charImg" src="./assets/images/Darth-Vader-icon.png">
+                    <div>Darth Maul</div>
+                    <div><span id="darthmaulHealth">180</span></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- character to attack -->
+    <div>
+        <div class="text-align">
+            <h2>Your Opponent</h2>
+            <div class="chooseChar">
+                <div class="defender" id="defender"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <button id="attackBtn">Attack</button>
+    <button id="resetBtn">Reset</button>
+
     <h2>Choose character to attack.</h2>
-
-    <div class='attacker d-flex' id="attackCharacters">
-    </div>
-    
-    <!-- Defender -->
-    <h2>Defender</h2>
-    <div>
-        <button id="attackBtn">Attack</button>
-        <button id="resetBtn">Reset</button>
-    </div>
-    
-    <div class="defender" id="defender" >
-
+    <div class="chooseChar">
+        <!-- character to attack -->
+        <div class='attacker d-flex' id="attackCharacters"></div>
     </div>
 
-    <div>
-        <p id="textDisplay"></p>
-    </div>
+    <p id="textDisplay"></p>
 
 </div>
 

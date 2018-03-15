@@ -8,7 +8,6 @@ html {
 
 body {
     background-image: url('./../images/background.jpg');
-    background-size: 100%;
     display: flex;
     justify-content: center;
 }
@@ -37,6 +36,7 @@ body {
     justify-content: center;
     width: 500px;
     margin: 0px 50px;
+    border: 1px solid red;
 }
 
 .attacker {
@@ -70,7 +70,6 @@ body {
 
 .text-align {
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
@@ -88,5 +87,4 @@ body {
 
 h2,p {
     color: yellow;
-    font-family: 'Press Start 2P', cursive;
 }
