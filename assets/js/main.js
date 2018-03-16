@@ -22,7 +22,7 @@ $( document ).ready(function() {
         "health" : 140,
         "oHealth" : 140,
         "multiplier": 15,
-        "oMultiplier": 6,
+        "oMultiplier": 15,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
         },
@@ -34,7 +34,7 @@ $( document ).ready(function() {
         "health" : 180,
         "oHealth" : 180,
         "multiplier": 12,
-        "oMultiplier": 6,
+        "oMultiplier": 12,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
         },
@@ -46,7 +46,7 @@ $( document ).ready(function() {
         "health" : 120,
         "oHealth" : 120,
         "multiplier": 17,
-        "oMultiplier": 6,
+        "oMultiplier": 17,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
         },
@@ -58,7 +58,7 @@ $( document ).ready(function() {
         "health" : 130,
         "oHealth" : 130,
         "multiplier": 15,
-        "oMultiplier": 6,
+        "oMultiplier": 15,
         "power" : function() {
             return Math.floor(Math.random()*this.multiplier)
         },
@@ -125,6 +125,11 @@ $( document ).ready(function() {
         darthMaul.health = darthMaul.oHealth;
         r2d2.health = r2d2.oHealth;
         chewbacca.health = chewbacca.oHealth;
+
+        luke.multiplier = luke.oMultiplier;
+        darthMaul.multiplier = darthMaul.oMultiplier;
+        r2d2.multiplier = r2d2.oMultiplier;
+        chewbacca.multiplier = chewbacca.oMultiplier;
 
         //Print the updated health
         healthUpdate();
